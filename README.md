@@ -1,4 +1,4 @@
-# 🏆 Enterprise-Grade Task Tracker Application
+﻿# 🏆 Enterprise-Grade Task Tracker Application
 
 A production-ready **Task Tracker** web application engineered with **Vue 2**, **Vuex**, and **Vuetify**, demonstrating strict adherence to enterprise best practices, clean architecture, and robust state management.
 
@@ -18,69 +18,40 @@ A production-ready **Task Tracker** web application engineered with **Vue 2**, *
 ### 2️⃣ Powerful Filtering & Search
 *   **Dual-Field Search**: Real-time filtering by **Title** AND **Description**.
 *   **Status Filter**: Filter tasks by status (All, Pending, In Progress, Completed).
-*   **Combined Logic**: Search and Status filters work seamlessly together via Vuex getters.
 
 ### 3️⃣ Enterprise Architecture
-*   **Modular Vuex Store**: Strict separation of data, logic, and UI.
-*   **Offline-First Architecture**: "Optimistic Saving" ensures data is written to local storage *before* network requests, preventing data loss on refresh.
-*   **Hybrid Persistence**: Seamlessly merges API data with local changes to bridge the gap of the mock API.
-*   **Reliable Error Handling**: Graceful fallbacks and user-friendly Snackbar notifications.
-*   **Strict Pagination**: Enforced 10 items per page for consistent data presentation.
+*   **Offline-First Architecture**: Changes are written to local storage before network requests to prevent data loss.
+*   **Hybrid Persistence**: Seamlessly merges API data with local changes.
 
 ---
 
-## 🛠 Technology Stack
+## 📖 Technical Documentation
 
-| Component | Technology | Reasoning |
+### 🛠 Vuex State Schema
+The application uses a modular Vuex store with a centralized state:
+- tasks: Array of objects containing task details.
+- filters: Object managing search strings and status filters.
+- loading: Boolean state for asynchronous indicators.
+- error: Stores API or validation error messages.
+
+### 🔌 API Integration Notes
+The app uses a **Non-Standard Hybrid Pattern**:
+- **Pessimistic Sync**: Every action attempts an API call via Axios.
+- **Fail-Safe Fallback**: If the API is unreachable, the system automatically switches to LocalStorage, ensuring 100% uptime for the user.
+
+---
+
+## ⏳ Project Timeline (Time Tracking)
+**Total Development Time**: 5 Hours
+
+| Phase | Time Spent | Activities |
 | :--- | :--- | :--- |
-| **Frontend** | **Vue.js 2** | Robust, reactive framework. |
-| **State** | **Vuex** | Centralized, predictable state management. |
-| **UI** | **Vuetify 2** | Material Design implementation. |
-| **API** | **Axios** | Promise-based HTTP client with interceptors. |
-| **Storage** | **LocalStorage** | Client-side persistence layer. |
+| **Setup** | 0.5 Hours | Environment config, structure creation. |
+| **Vuex Integration** | 1 Hour | State schema, persistence logic. |
+| **Component Dev** | 1 Hour | UI development with Vuetify components. |
+| **Testing/Verify** | 0.5 Hour | Logic verification and search hardening. |
+| **Netlify Deploy** | 2 Hours | Subdirectory config and routing fixes. |
 
 ---
 
-## 📂 Project Structure
-
-```text
-src/
-├── components/          # focused UI components
-│   ├── AppHeader.vue    # Application navigation/branding
-│   ├── FilterPanel.vue  # Search & Filter controls
-│   ├── TaskForm.vue     # Modal for Create/Edit
-│   └── TaskTable.vue    # Data display with pagination
-├── services/            # API abstraction layer
-│   └── api.js           # Axios configuration
-├── store/               # Centralized State Management
-│   ├── modules/
-│   │   └── tasks.js     # Task logic (Actions, Mutations, Getters)
-│   └── index.js         # Root store
-├── App.vue              # Main Application Layout
-└── main.js              # Entry point
-```
-
----
-
-## ⚡ Quick Start
-
-1.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
-
-2.  **Run Application**
-    ```bash
-    npm run serve
-    ```
-    > Access at `http://localhost:8080`
-
-3.  **Lint Code**
-    ```bash
-    npm run lint
-    ```
-
----
-
-
-
+*Generated for Enterprise Compliance Assessment.*
