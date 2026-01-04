@@ -3,7 +3,8 @@
 A production-ready **Task Tracker** web application engineered with **Vue 2**, **Vuex**, and **Vuetify**, demonstrating strict adherence to enterprise best practices, clean architecture, and robust state management.
 
 **Author**: Ahtisham Ali  
-**Submission Date**: 5/Jan/2026
+**Submission Date**: 5/Jan/2026  
+**Live Demo**: [https://tracktaskdaily1.netlify.app/](https://tracktaskdaily1.netlify.app/)
 
 ---
 
