@@ -1,0 +1,12 @@
+{
+  "name": "task-app-root",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "npm run serve --prefix task-tracker-app",
+    "build": "npm run build --prefix task-tracker-app",
+    "lint": "npm run lint --prefix task-tracker-app"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}
